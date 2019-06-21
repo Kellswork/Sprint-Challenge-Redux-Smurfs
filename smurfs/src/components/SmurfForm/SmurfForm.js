@@ -22,7 +22,7 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onAddSmurf}>
+      <form action='#' onSubmit={this.onAddSmurf}>
         <h2>Wanna Add A New Smurf?</h2>
         <div className="smurf-details">
           <div className="input-group">

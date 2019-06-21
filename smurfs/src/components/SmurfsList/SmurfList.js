@@ -10,9 +10,8 @@ class SmurfList extends Component {
   }
 
   render() {
-      
+
     const list = this.props.smurfs || [];
-    console.log(list);
     return (
       <div className="smurfs-container">
         <h1>Smurfeees</h1>

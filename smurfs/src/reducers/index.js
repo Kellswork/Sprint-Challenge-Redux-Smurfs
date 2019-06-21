@@ -66,7 +66,7 @@ export const smurfReducer = (state = initialState, action) => {
 
       case DELETE_SMURFS_SUCCESS: 
       return {
-        ...state, smurf: action.payload
+        ...state, smurfs: action.payload
       }
 
       case DELETE_SMURFS_FAILURE: 

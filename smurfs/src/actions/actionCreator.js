@@ -5,11 +5,11 @@ export const getSmurfs = () => dispatch => {
     dispatch({type: FETCHING_SMURFS, payload: true })
     axios.get('http://localhost:3333/smurfs')
     .then( res => {
-        console.log(res)
+        
         dispatch({type: GET_SMURFS_SUCESS, payload: res.data})
     })
     .catch(error => {
-        console.log(error)
+        
         dispatch({type: GET_SMURFS_FAILURE, payload: error })
     })
     .finally(() => {
@@ -24,7 +24,6 @@ export const addSmurf = smurf => dispatch => {
         dispatch({type: ADD_SMURFS_SUCCESS, payload: res.data})
     })
     .catch(error => {
-        console.log(error)
         dispatch({type: ADD_SMURFS_FAILURE, payload: error})
     })
     .finally(() => {
@@ -39,7 +38,6 @@ export const updateSmurf = (id, smurf) => dispatch => {
         dispatch({type: UPDATE_SMURFS_SUCCESS, payload: res.data})
     })
     .catch(error => {
-        console.log(error)
         dispatch({type: UPDATE_SMURFS_FAILURE, payload: error})
     })
     .finally(() => {
@@ -51,6 +49,7 @@ export const deleteSmurf = id => dispatch => {
     dispatch({ type: DELETING_SMURFS, payload: true })
     axios.delete(`http://localhost:3333/smurfs/${id}`) 
     .then(res => {
+        console.log('hello')
         dispatch({type: DELETE_SMURFS_SUCCESS, payload: res.data})
     })
     .catch(error => {
