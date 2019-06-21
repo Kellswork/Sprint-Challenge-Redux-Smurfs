@@ -17,7 +17,7 @@ export const smurfReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_SMURFS:
       return {
-        ...state, fetchingSmurfs: true,
+        ...state, fetchingSmurfs: action.payload,
       }
     case GET_SMURFS_SUCESS:
       return {
@@ -31,7 +31,7 @@ export const smurfReducer = (state = initialState, action) => {
 
       case ADDING_SMURFS: 
       return {
-        ...state, addingSmurf: true
+        ...state, addingSmurf: action.payload
       }
 
       case ADD_SMURFS_SUCCESS: 
@@ -46,7 +46,7 @@ export const smurfReducer = (state = initialState, action) => {
 
       case UPDATING_SMURFS: 
       return {
-        ...state, updatingSmurf: true
+        ...state, updatingSmurf: action.payload
       }
 
       case UPDATE_SMURFS_SUCCESS: 
@@ -61,7 +61,7 @@ export const smurfReducer = (state = initialState, action) => {
 
       case DELETING_SMURFS: 
       return {
-        ...state, deletingSmurf: true
+        ...state, deletingSmurf: action.payload
       }
 
       case DELETE_SMURFS_SUCCESS: 
