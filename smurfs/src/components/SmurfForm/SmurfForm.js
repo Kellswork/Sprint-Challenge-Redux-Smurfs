@@ -11,19 +11,22 @@ class SmurfForm extends Component {
     this.heightRef = React.createRef();
   }
 
-  onAddSmurf = () => {
+  onAddSmurf = (e) => {
+      e.preventDefault();
+      const { history } = this.props;
       const smurf = {
           name: this.nameRef.current.value,
           age: this.ageRef.current.value,
           height: this.heightRef.current.value
       }
-      this.props.addSmurf(smurf);
+      this.props.addSmurf(smurf, history);
+      
   }
 
   render() {
     return (
       <form action='#' onSubmit={this.onAddSmurf}>
-        <h2>Wanna Add A New Smurf?</h2>
+        <h2>Add A New Smurf</h2>
         <div className="smurf-details">
           <div className="input-group">
             <label htmlFor="name">Name</label>

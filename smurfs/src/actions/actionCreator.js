@@ -17,11 +17,12 @@ export const getSmurfs = () => dispatch => {
     })
 }
 
-export const addSmurf = smurf => dispatch => {
+export const addSmurf = (smurf, history) => dispatch => {
     dispatch({ type: ADDING_SMURFS, payload: true })
     axios.post('http://localhost:3333/smurfs', smurf) 
     .then(res => {
         dispatch({type: ADD_SMURFS_SUCCESS, payload: res.data})
+        history.push('/');
     })
     .catch(error => {
         dispatch({type: ADD_SMURFS_FAILURE, payload: error})
@@ -49,7 +50,6 @@ export const deleteSmurf = id => dispatch => {
     dispatch({ type: DELETING_SMURFS, payload: true })
     axios.delete(`http://localhost:3333/smurfs/${id}`) 
     .then(res => {
-        console.log('hello')
         dispatch({type: DELETE_SMURFS_SUCCESS, payload: res.data})
     })
     .catch(error => {

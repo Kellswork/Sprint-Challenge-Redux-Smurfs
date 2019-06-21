@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import SmurfList from './SmurfsList/SmurfList';
-import SmurfForm from './SmurfForm/SmurfForm';
-import './App.css';
+import React, { Component } from "react";
+import SmurfList from "./SmurfsList/SmurfList";
+import SmurfForm from "./SmurfForm/SmurfForm";
+import SmurfNav from "./SmurfNav/SmurfNav";
+import { Route } from "react-router-dom";
+import "./App.css";
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -12,11 +14,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <SmurfList />
-       <SmurfForm />
+        <SmurfNav />
+        <Route exact={true} path="/" component={SmurfList} />
+        <Route exact path="/smurf_form" render={ props => <SmurfForm {...props} />} />
       </div>
     );
   }
 }
+
 
 export default App;

@@ -1,0 +1,33 @@
+
+.smurf-nav {
+padding-top: 20px;
+padding-bottom: 20px;
+max-width: 600px;
+margin: 0 auto;
+display: flex;
+justify-content: flex-end;
+box-sizing: border-box;
+}
+
+.smurf-nav a {
+  text-decoration: none;
+  margin-right: 50px;
+  color: white;
+  font-size: 1.2em;
+  border: 1px solid;
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #386fa4;
+}
+
+.smurf-nav a.active,
+a:hover,
+a:active {
+  background-color: white;
+  color: #386fa4;
+}
