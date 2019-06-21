@@ -5,6 +5,7 @@ export const getSmurfs = () => dispatch => {
     dispatch({type: FETCHING_SMURFS, payload: true })
     axios.get('http://localhost:3333/smurfs')
     .then( res => {
+        console.log(res)
         dispatch({type: GET_SMURFS_SUCESS, payload: res.data})
     })
     .catch(error => {

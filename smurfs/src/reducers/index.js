@@ -13,6 +13,7 @@ const initialState = {
   error: null
 }
 
+
 export const smurfReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_SMURFS:
@@ -23,7 +24,6 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state, smurfs: action.payload
       }
-
     case GET_SMURFS_FAILURE:
       return {
         ...state, error: action.payload
@@ -73,6 +73,8 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state, error: action.payload
       }
+      default: 
+      return state;
   }
 }
 
